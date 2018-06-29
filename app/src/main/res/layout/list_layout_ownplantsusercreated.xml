@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="@dimen/D.topButtonHeight"
+    android:padding="@dimen/D.standardPadding"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:id="@+id/LLLayoutOwnPlants"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        >
+
+        <!--half height whole width-->
+        <TextView
+            android:id="@+id/TVlayoutpName"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:ellipsize="marquee"
+            android:singleLine="true"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_weight="1"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="1">
+
+            <!--below name bigger left-->
+            <TextView
+                android:id="@+id/TVlayoutpDate"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                />
+            <!--below name smaller right-->
+            <TextView
+                android:id="@+id/TVlayoutpFrequency"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="4">
+
+        <Button
+            android:id="@+id/BLayoutEditPlant"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@mipmap/edit_but"
+            android:focusable="false"
+            />
+<!--
+        <Button
+            android:id="@+id/BlayoutDeletePlant"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:focusable="false"
+            android:backgroundTint="@color/C.Red"
+            />
+-->
+
+    </LinearLayout>
+
+</LinearLayout>

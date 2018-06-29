@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    >
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolbar"
+        android:background="@color/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:navigationIcon="?attr/homeAsUpIndicator"
+        >
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/S.createplant_A_CreatePlant"
+            android:textColor="@color/C.white"
+            android:textSize="20dp"/>
+
+    </android.support.v7.widget.Toolbar>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingEnd="@dimen/D.standardPadding"
+        android:paddingStart="@dimen/D.standardPadding"
+        >
+
+        <!--Enter name-->
+        <TextView
+            android:id="@+id/TVPlantName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/D.standardPadding"
+            android:text="@string/S.createplant_TV_Plantname"
+            android:textStyle="bold"
+            android:textAlignment="viewStart"/>
+
+        <EditText
+            android:id="@+id/ETPlantname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/S.createplant_ET_EnterPlantname"
+            android:inputType="textNoSuggestions" />
+
+        <!--Hyphen________________________________________________-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/C.Dark_Green" />
+
+        <!--Frequency of watering-->
+        <TextView
+            android:id="@+id/TVFrequency"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/S.createplant_TV_FrequencyOfWatering"
+            android:textStyle="bold"
+            android:paddingTop="@dimen/D.standardPadding"/>
+
+        <EditText
+            android:id="@+id/ETEnterFrequency"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/S.createplant_ET_EnterFrequencyOfWatering"
+            android:inputType="numberDecimal"
+            android:paddingTop="@dimen/D.standardPadding"/>
+
+        <!--Hyphen________________________________________________-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/C.Dark_Green" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/S.createplant_TV_FirstWatering"
+            android:textStyle="bold"
+            android:paddingTop="@dimen/D.standardPadding"
+            />
+
+        <!--Enter date of first watering-->
+        <DatePicker
+            android:id="@+id/DPEditPickeddate"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:datePickerMode="spinner" />
+
+
+        <!--Hyphen________________________________________________-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/C.Dark_Green" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:orientation="horizontal"
+            android:layout_weight="1"
+            android:paddingTop="@dimen/D.standardPadding"
+            android:paddingBottom="@dimen/D.standardPadding">
+
+            <Button
+                android:id="@+id/BChooseImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/S.createplant_TV_UploadImage"
+                android:background="@null"/>
+
+            <ImageView
+                android:id="@+id/IVCreatePicture"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+
+
+        </LinearLayout>
+
+
+        <!--Hyphen________________________________________________-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/C.Dark_Green" />
+
+        <!--Saves all entered data-->
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/BSavePlant"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:paddingTop="32dp"
+            android:text="@string/S.createplant_B_SavePlant"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,59 @@
+{
+  "project_info": {
+    "project_number": "914567299292",
+    "firebase_url": "https://plants-vs-dehydration.firebaseio.com",
+    "project_id": "plants-vs-dehydration",
+    "storage_bucket": "plants-vs-dehydration.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:914567299292:android:9121dea3fa8c6c84",
+        "android_client_info": {
+          "package_name": "com.example.slidingtab"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "914567299292-l1lu75pl9tnho6lqbqprt1e2ufgp64un.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.slidingtab",
+            "certificate_hash": "7b597a2244d7dcba25ceec5ebc77ff139dec3dde"
+          }
+        },
+        {
+          "client_id": "914567299292-o1imd3e1dom09981sg4vl4qdongi92ng.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "914567299292-o1imd3e1dom09981sg4vl4qdongi92ng.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADf0AcwRUS9c_UOKb05zl_gYgFr7w2P5g"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "914567299292-o1imd3e1dom09981sg4vl4qdongi92ng.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

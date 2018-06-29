@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="D.underlineHeight">16dp</dimen>
+    <dimen name="D.topButtonHeight">80dp</dimen>
+    <dimen name="D.diameter">48dp</dimen>
+    <dimen name="D.radius">16dp</dimen>
+    <dimen name="D.standardPadding">8dp</dimen>
+    <dimen name="D.showplanttextsize">16sp</dimen>
+</resources>
