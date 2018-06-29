@@ -43,7 +43,7 @@ public class MainFragmentCalendar extends Fragment{
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    private int uniqueID = 45612;
+    int uniqueID = 45612;
     android.support.v7.app.NotificationCompat.Builder notBuilder;
 
     private String DATEWITHFREQ_FILE = "PlantDateWithFreq.txt";
@@ -101,6 +101,45 @@ public class MainFragmentCalendar extends Fragment{
         dateWithFreqList = getDateWithFreq();
         nameWithFreqList = getNameWithFreq();
 
+        String currTime = new SimpleDateFormat("dd.MM.yyyy").format(Calendar.getInstance().getTime());
+
+        if(dateWithFreqList.contains(currTime)) {
+            //if yes create a string with all plantnames that have to be watered that day
+            long pattern[] = {100,10,100};
+            StringBuilder sb1 = new StringBuilder();
+            for(int i = 0; i < dateWithFreqList.size(); i++) {
+                if (dateWithFreqList.get(i).equals(currTime)) {
+                    sb1.append(nameWithFreqList.get(i)).append(" ");
+                    if (sb1.length() == 0) {
+                        tvplantstowater.setText("Keine Pflanzen vorhanden");
+                    } else {
+                        tvplantstowater.setText(sb1.toString());
+                    }
+                }
+            }
+            String plants = sb1.toString();
+            //and then create the notification which includes this string
+            notBuilder = new android.support.v7.app.NotificationCompat.Builder(getContext());
+            notBuilder.setTicker("Ticker");
+            notBuilder.setWhen(System.currentTimeMillis());
+            notBuilder.setContentTitle("Vergiss nicht zu Bewässern");
+            notBuilder.setContentText(plants);
+            notBuilder.setSmallIcon(R.drawable.ic_notification_launcher);
+            notBuilder.setVibrate(pattern);
+
+            Intent intent = new Intent(getContext(), ActivityMain.class);
+            PendingIntent pIntent = PendingIntent.getActivity(getContext(), 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+            notBuilder.setContentIntent(pIntent);
+
+            NotificationManager nm = (NotificationManager) getContext().getSystemService(Context.NOTIFICATION_SERVICE);
+            try {
+                nm.notify(uniqueID, notBuilder.build());
+            }catch (NullPointerException e){
+                e.printStackTrace();
+            }
+
+        }
+
         for(int i=0;i<dateWithFreqList.size();i++) {
             GregorianCalendar gCal = new GregorianCalendar();
             try {
@@ -149,39 +188,6 @@ public class MainFragmentCalendar extends Fragment{
         });
 
         //check if the current time equals a date given in the datelist (set plants)
-        String currTime = new SimpleDateFormat("dd.MM.yyyy").format(Calendar.getInstance().getTime());
-
-        if(dateWithFreqList.contains(currTime)) {
-            //if yes create a string with all plantnames that have to be watered that day
-            long pattern[] = {100,10,100};
-            StringBuilder sb1 = new StringBuilder();
-            for(int i = 0; i < dateWithFreqList.size(); i++) {
-                if (dateWithFreqList.get(i).equals(currTime)) {
-                    sb1.append(nameWithFreqList.get(i)).append(" ");
-                    if (sb1.length() == 0) {
-                        tvplantstowater.setText("Keine Pflanzen vorhanden");
-                    } else {
-                        tvplantstowater.setText(sb1.toString());
-                    }
-                }
-            }
-            String plants = sb1.toString();
-            //and then create the notification which includes this string
-            notBuilder = new android.support.v7.app.NotificationCompat.Builder(getContext());
-            notBuilder.setTicker("Ticker");
-            notBuilder.setWhen(System.currentTimeMillis());
-            notBuilder.setContentTitle("Vergiss nicht zu Bewässern");
-            notBuilder.setContentText(plants);
-            notBuilder.setVibrate(pattern);
-
-            Intent intent = new Intent(getContext(), ActivityMain.class);
-            PendingIntent pIntent = PendingIntent.getActivity(getContext(), 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-            notBuilder.setContentIntent(pIntent);
-
-            NotificationManager nm = (NotificationManager) getContext().getSystemService(Context.NOTIFICATION_SERVICE);
-            nm.notify(uniqueID, notBuilder.build());
-        }
-
     }
 
     @Override
