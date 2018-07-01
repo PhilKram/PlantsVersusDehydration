@@ -197,6 +197,7 @@ public class FirebaseUserClient{
                                             if (alertName.equals(intentstringname)) {
                                                 dbRef.child(alertName).child("Date").setValue(alertDate);
                                                 dbRef.child(alertName).child("Frequency").setValue(alertFrequency);
+                                                deleteOldDate(mContext, intentstringname);
                                             } else {
                                                 //another plant with the edited name exist
                                             }
@@ -204,7 +205,7 @@ public class FirebaseUserClient{
                                             dbRef.child(alertName).child("Name").setValue(alertName);
                                             dbRef.child(alertName).child("Date").setValue(alertDate);
                                             dbRef.child(alertName).child("Frequency").setValue(alertFrequency);
-                                            //calculateNewDates(mContext, alertFrequency, alertDate, alertName);
+                                            deleteOldDate(mContext, intentstringname);
                                         }
                                     }
 
@@ -237,6 +238,7 @@ public class FirebaseUserClient{
                                                             picPicture = downloadUrl.toString();
                                                             pU.setPicture(picPicture);
                                                             dbRef.child(alertName).child("Picture").setValue(picPicture);
+                                                            deleteOldDate(mContext, intentstringname);
                                                             calculateNewDates(mContext, alertFrequency, alertDate, alertName);
                                                             Toast.makeText(mContext, "Pflanze erfolgreich bearbeitet", Toast.LENGTH_SHORT).show();
                                                             ((ActivityEditPlant) mContext).onBackPressed();
@@ -277,9 +279,10 @@ public class FirebaseUserClient{
                                                         //delete old data saved with the name you edited
                                                         stRef.child(intentstringname).delete();
                                                         dbRef.child(intentstringname).removeValue();
-                                                        deleteOldDate(mContext, intentstringname);
+
                                                         picPicture = downloadUrl.toString();
                                                         dbRef.child(alertName).child("Picture").setValue(picPicture);
+                                                        deleteOldDate(mContext, intentstringname);
                                                         updateValues(mContext, alertName, alertDate, alertFrequency);
                                                         Toast.makeText(mContext, "Pflanze erfolgreich bearbeitet", Toast.LENGTH_SHORT).show();
                                                         ((ActivityEditPlant) mContext).onBackPressed();
