@@ -195,9 +195,10 @@ public class FirebaseUserClient{
                                         //if element with this name already exists
                                         if (dataSnapshot.exists()) {    //if name stays the same update rest
                                             if (alertName.equals(intentstringname)) {
+                                                dbRef.child(alertName).child("Name").setValue(alertName);
                                                 dbRef.child(alertName).child("Date").setValue(alertDate);
                                                 dbRef.child(alertName).child("Frequency").setValue(alertFrequency);
-                                                deleteOldDate(mContext, intentstringname);
+                                                dbRef.child(intentstringname).removeValue();
                                             } else {
                                                 //another plant with the edited name exist
                                             }
@@ -205,7 +206,7 @@ public class FirebaseUserClient{
                                             dbRef.child(alertName).child("Name").setValue(alertName);
                                             dbRef.child(alertName).child("Date").setValue(alertDate);
                                             dbRef.child(alertName).child("Frequency").setValue(alertFrequency);
-                                            deleteOldDate(mContext, intentstringname);
+                                            dbRef.child(intentstringname).removeValue();
                                         }
                                     }
 
@@ -221,6 +222,8 @@ public class FirebaseUserClient{
                                         if (alertName.equals(intentstringname)) {
                                             progressDialog.show();
                                             StorageReference childRef = stRef.child(alertName);
+
+                                            stRef.child(intentstringname).delete();
 
                                             //uploading the image
                                             final UploadTask uploadTask = childRef.putFile(picPath);
@@ -264,6 +267,8 @@ public class FirebaseUserClient{
                                         //save all data with the new name
                                         StorageReference childRef = stRef.child(alertName);
 
+                                        stRef.child(intentstringname).delete();
+
                                         //uploading the image
                                         final UploadTask uploadTask = childRef.putFile(picPath);
 
@@ -277,11 +282,10 @@ public class FirebaseUserClient{
                                                     @Override
                                                     public void onSuccess(Uri downloadUrl) {
                                                         //delete old data saved with the name you edited
-                                                        stRef.child(intentstringname).delete();
-                                                        dbRef.child(intentstringname).removeValue();
 
                                                         picPicture = downloadUrl.toString();
                                                         dbRef.child(alertName).child("Picture").setValue(picPicture);
+                                                        dbRef.child(intentstringname).removeValue();
                                                         deleteOldDate(mContext, intentstringname);
                                                         updateValues(mContext, alertName, alertDate, alertFrequency);
                                                         Toast.makeText(mContext, "Pflanze erfolgreich bearbeitet", Toast.LENGTH_SHORT).show();
@@ -351,7 +355,7 @@ public class FirebaseUserClient{
             //this position in all lists
             int counterOfDeletedElems = 0;
             for (int i = 0; i < listName.size(); i++) {
-                if ((listName.get(i).equals(name))) {
+                if ((listName.get(i).equals(name)) || (listName.get(i).equals(" "))) {
                     listName.remove(i - counterOfDeletedElems);
                     listDate.remove(i - counterOfDeletedElems);
                     counterOfDeletedElems++;
@@ -417,7 +421,7 @@ public class FirebaseUserClient{
             //this position in all lists
             int counterOfDeletedElems = 0;
             for (int i = 0; i < listName.size(); i++) {
-                if ((listName.get(i).equals(name))) {
+                if ((listName.get(i).equals(name)) || (listName.get(i).equals(" "))) {
                     listName.remove(i-counterOfDeletedElems);
                     listDate.remove(i-counterOfDeletedElems);
                     counterOfDeletedElems++;

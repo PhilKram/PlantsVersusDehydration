@@ -7,43 +7,21 @@
     <string name="S.calendar_B_createplant">+\nPflanze erstellen</string>  <!--+\nCreate a plantUsercreated-->
     <string name="S.calendar_TV_PlantsToWater">Zu bewässern:</string>  <!--You should water:-->
 
-    <string name="S.shownote_TV_nonote">Keine Notiz</string>    <!--No note-->
-    <string name="S.shownote_A_shownote">Notiz</string> <!--Note-->
-
-    <string name="S.search_ET_SearchPlant">Pflanze eingeben</string>   <!--Enter a plantUsercreated-->
-    <string name="S.search_PlantPoison">Giftig</string>  <!--Poisonous-->
-    <string name="S.search_B_Confirm">Bestätigen</string>  <!--Confirm-->
-    <string name="S.search_SP_PlantSpecies">Pflanzenspezies</string>  <!--PlantUsercreated species-->
-
-    <string name="S.ownplants_TV_YourPlants">Deine Pflanzen</string> <!--Your plants-->
-    <string name="S.ownplants_B_UpdateListView">Aktualisieren</string>  <!--Update-->
-
     <string name="S.createplant_A_CreatePlant">Pflanze erstellen</string>    <!--Create plantUsercreated-->
     <string name="S.createplant_TV_Plantname">Name der Pflanze</string> <!--Name-->
     <string name="S.createplant_ET_EnterPlantname">Name eingeben</string>    <!--Enter a name-->
     <string name="S.createplant_TV_FirstWatering">Datum beim ersten Gießen</string>   <!--Date of first watering-->
     <string name="S.createplant_TV_FrequencyOfWatering">In wie vielen Tagen willst du wieder gießen?</string>   <!--In how many days do you want to water again?-->
-    <string name="S.createplant_ET_EnterFrequencyOfWatering">Giessabstand (Tage)</string>    <!--Enter frequency (days)-->
+    <string name="S.createplant_ET_EnterFrequencyOfWatering">Gießabstand (Tage)</string>    <!--Enter frequency (days)-->
     <string name="S.createplant_B_SavePlant">Pflanze speichern</string>    <!--Save created plantUsercreated-->
-    <string name="S.createplant_TV_Date">--Datum--</string>  <!--Date-->
     <string name="S.createplant_TV_UploadImage">Bild hochladen</string> <!--Upload image-->
-
-    <string name="S.showgivenplant_TV_PlantName">Name</string>   <!--Name-->
-    <string name="S.showgivenplant_TV_PlantLatinName">Wissenschaftlicher Name</string>   <!--Latin name-->
-    <string name="S.showgivenplant_TV_PlantLighting">Optimale Beleuchtung</string>   <!--Best possible lighting-->
-    <string name="S.showgivenplant_TV_PlantFrequency">Optimale Frequenz</string> <!--Best possible frequency-->
-    <string name="S.showgivenplant_B_AddPlant">Hinzufügen</string> <!--Add PlantUsercreated-->
 
     <string name="S.showownplant_B_EditPlant">Bearbeiten</string>  <!--Edit-->
     <string name="S.showownplant_TV_PlantName">Name</string>    <!--Name-->
     <string name="S.showownplant_TV_PlantDate">Erste Bewässerung</string>   <!--First time watered-->
     <string name="S.showownplant_TV_PlantFrequency">Giessabstand</string>   <!--Frequency-->
     <string name="S.showownplant_B_DeletePlant">Löschen</string> <!--Delete-->
-    <string name="S.showownplant_IV_PlantPicture">Bild</string> <!--Picture-->
 
     <string name="S.editplant_A_EditPlant">Pflanze bearbeiten</string>  <!--Edit plant-->
-
-    <string name="S.searchedplants_TV_Toolbar">Vorhandene Pflanzen</string> <!--Available plants-->
-
 
 </resources>

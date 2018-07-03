@@ -15,9 +15,6 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-
 public class ActivityCreatePlant extends AppCompatActivity{
 
     //the user has to create a new plant with a name (etplantname),

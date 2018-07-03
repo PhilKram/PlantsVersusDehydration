@@ -3,12 +3,10 @@ package com.example.slidingtab;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.net.Uri;
-import android.nfc.Tag;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -23,10 +21,8 @@ import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
-import java.io.FileReader;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
@@ -165,7 +161,7 @@ public class ActivityShowOwnPlant extends AppCompatActivity {
             //this position in all lists
             int counterOfDeletedElems = 0;
             for (int i = 0; i < listName.size(); i++) {
-                if ((listName.get(i).equals(name))) {
+                if ((listName.get(i).equals(name)) || (listName.get(i).equals(" "))) {
                     listName.remove(i-counterOfDeletedElems);
                     listDate.remove(i-counterOfDeletedElems);
                     counterOfDeletedElems++;
